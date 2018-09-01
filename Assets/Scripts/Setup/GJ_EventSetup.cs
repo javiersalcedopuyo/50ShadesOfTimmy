@@ -36,6 +36,13 @@ namespace GameJam.Setup
         public static class Game
         {
             public const string START_GAME = "initGameEvent";
+            public const string CONTINUE_GAME = "continueGameEvent";
+        }
+
+        public static class Menu
+        {
+            public const string GO_TO_MAIN_MENU = "GoToMainMenuEvent";
+            public const string GO_TO_GAME = "GoToGameMenuEvent";
         }
     }
 

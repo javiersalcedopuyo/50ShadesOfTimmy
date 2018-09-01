@@ -22,7 +22,8 @@ namespace GameJam
         // Use this for initialization
         void Start()
         {
-            GJ_SceneLoader.Instance.LoadSceneAsync(GJ_SceneSetup.SCENES.MAIN_MENU);
+            // load menu
+            GJ_SceneLoader.LoadScene(GJ_SceneSetup.SCENES.MAIN_MENU, 1f, GJ_EventSetup.Menu.GO_TO_MAIN_MENU);
         }
 
     }

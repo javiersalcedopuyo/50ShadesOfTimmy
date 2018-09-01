@@ -5,6 +5,8 @@
  *                                                          *
  *==========================================================*/
 
+using GameJam.EventManagement;
+using GameJam.Setup;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,16 +21,77 @@ namespace GameJam
     public class GJ_InputManager : GJ_SingletonMonobehaviour<GJ_InputManager>
     {
 
+        [SerializeField] private KeyCode[] m_interactKey = { KeyCode.E, KeyCode.Joystick1Button0 };
+
         // Use this for initialization
         void Start()
         {
-
+            
         }
 
-        // Update is called once per frame
-        void Update()
+        /// <summary>
+        /// When destroying the object we must stop listening events
+        /// </summary>
+        private void OnDestroy()
         {
+            StopAllListeners();
+        }
+        /// <summary>
+        /// Start Listening to events
+        /// </summary>
+        private void StartAllListeners()
+        {
+            GJ_EventManager.StartListening(GJ_EventSetup.Menu.GO_TO_MAIN_MENU, ShowCursor);
+            GJ_EventManager.StartListening(GJ_EventSetup.Menu.GO_TO_GAME, HideCursor);
+        }
+        /// <summary>
+        /// Stop Listening to events
+        /// </summary>
+        private void StopAllListeners()
+        {
+            GJ_EventManager.StopListening(GJ_EventSetup.Menu.GO_TO_MAIN_MENU, ShowCursor);
+            GJ_EventManager.StopListening(GJ_EventSetup.Menu.GO_TO_GAME, HideCursor);
+        }
+        /// <summary>
+        /// Show cursor when going to menu
+        /// </summary>
+        public void ShowCursor()
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        /// <summary>
+        /// Hide cursor when going to game
+        /// </summary>
+        public void HideCursor()
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        /// <summary>
+        /// If we pressed interact buttons we tell we did
+        /// </summary>
+        /// <returns></returns>
+        private bool _PressedInteractButton()
+        {
+            
+            foreach (KeyCode k in m_interactKey)
+            {
+                if (Input.GetKeyDown(k))
+                {
+                    return true;
+                }
+            }
 
+            return false;
+        }
+        /// <summary>
+        /// Did we press interact buttons?
+        /// </summary>
+        /// <returns></returns>
+        public static bool PressedInteract()
+        {
+            return Instance._PressedInteractButton();
         }
     }
 }
