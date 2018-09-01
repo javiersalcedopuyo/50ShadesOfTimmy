@@ -12,27 +12,25 @@ using UnityEngine;
 namespace GameJam.Setup
 {
     /// <summary>
-    /// Scene setup. We will use this Scenes as reference so we don't need
-    /// to hardcode the names of the scenes nor the build index.
-    /// just SceneLoad(SCENES.GAME_0);
+    /// Flowchart keys
     /// </summary>
-    public static class GJ_SceneSetup
+    public static class GJ_FlowchartSetup
     {
-        // Hardcoded as we have a few demo scenes
-        public enum SCENES
+        /// <summary>
+        /// Keys for flowchart variables
+        /// </summary>
+        public static class Keys
         {
-            MANAGER_INITIALIZER = 0,
-            MAIN_MENU,
-            PROLOGUE,
-            TOWN,
-            FOREST,
-            BOSS,
-            END,
-            JAVI_TEST,
-            MANU_TEST,
-            ZONE_LOADER
+            public const string LANGUAGE = "Language";
         }
-       
+        /// <summary>
+        /// Defined messages. Dialog msgs must be set in NPCs themselves
+        /// </summary>
+        public static class Messages
+        {
+            public const string SET_LANGUAGE = "SetLanguage";
+        }
+
     }
 
 }

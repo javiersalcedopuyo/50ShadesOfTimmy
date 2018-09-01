@@ -52,7 +52,7 @@ namespace GameJam.Localization
         /// </summary>
         public List<SystemLanguage> ActiveLanguages { get { return m_activelanguages; } }
         public SystemLanguage CurrentLanguage { get { return m_currentLanguage; } }
-        public int CurrentLanguageIndex { get { return m_currentLanguageIndex; } }
+        public int CurrentLanguageIndex { get { return m_activelanguages.IndexOf(m_currentLanguage); } }
 
         #endregion
 

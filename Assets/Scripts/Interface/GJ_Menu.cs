@@ -155,14 +155,6 @@ namespace GameJam.Interface
 
             m_graphicsDropdown.value = QualitySettings.GetQualityLevel();
 
-            //Parse languages
-            m_languagesDropdown.ClearOptions();
-            List<Dropdown.OptionData> newList = new List<Dropdown.OptionData>();
-            foreach (SystemLanguage language in GJ_TextManager.Instance.ActiveLanguages)
-            {
-                newList.Add(new Dropdown.OptionData(language.ToString()));
-            }
-            m_languagesDropdown.AddOptions(newList);
             m_languagesDropdown.value = GJ_TextManager.Instance.CurrentLanguageIndex;
 
             // Parse Volume
@@ -206,6 +198,15 @@ namespace GameJam.Interface
             }
 
             m_graphicsDropdown.AddOptions(newList);
+
+            //Parse languages
+            m_languagesDropdown.ClearOptions();
+            newList = new List<Dropdown.OptionData>();
+            foreach (SystemLanguage language in GJ_TextManager.Instance.ActiveLanguages)
+            {
+                newList.Add(new Dropdown.OptionData(GJ_TextManager.GetText(language.ToString())));
+            }
+            m_languagesDropdown.AddOptions(newList);
         }
         /// <summary>
         /// We check in savemanager if we have a previous game saved

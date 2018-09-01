@@ -82,4 +82,16 @@
     <Key>Very Low</Key>
     <Text>Molto Basso</Text>
   </Table1>
+  <Table1>
+    <Key>Spanish</Key>
+    <Text>Spagnolo</Text>
+  </Table1>
+  <Table1>
+    <Key>English</Key>
+    <Text>Inglese</Text>
+  </Table1>
+  <Table1>
+    <Key>Italian</Key>
+    <Text>Italiano</Text>
+  </Table1>
 </NewDataSet>
