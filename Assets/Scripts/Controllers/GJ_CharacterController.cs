@@ -60,15 +60,18 @@ namespace GameJam.Character{
 
 			Quaternion m_desiredRot = Quaternion.Euler(0,0,0);
 			if (m_movDir.x != 0.0f) {
-				m_desiredRot = Quaternion.Euler(0.0f, Mathf.Sign(m_movDir.x) * 30.0f, 0.0f);
+				m_desiredRot = Quaternion.Euler(0.0f, Mathf.Sign(m_movDir.x) * 20.0f, 0.0f);
+                anim.SetBool("isWalking", true);
 			}
 			if (m_movDir.z != 0.0f) {
 				//float m_yRot = ( Mathf.Sign(m_verDir.x) < 0.0f ) ? 180.0f : 0.0f;
-				m_desiredRot = Quaternion.Euler(Mathf.Sign(m_movDir.z) * 30.0f, 0.0f, 0.0f);
+				m_desiredRot = Quaternion.Euler(Mathf.Sign(m_movDir.z) * 15.0f, 0.0f, 0.0f);
+                anim.SetBool("isWalking", true);
             }
             if (m_movDir == new Vector3(0,0,0)) {
 				m_desiredRot = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-            }
+                anim.SetBool("isWalking", false);
+            } 
 			transform.rotation = Quaternion.Lerp(transform.rotation, m_desiredRot, Time.time*m_turningSpeed);
 
 		}

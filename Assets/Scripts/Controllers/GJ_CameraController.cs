@@ -19,7 +19,7 @@ namespace GameJam.Camera{
 
         void Update() {
 
-            transform.position = Vector3.Lerp(transform.position, player.transform.position+m_relativeDist, Time.time*0.01f);
+            transform.position = Vector3.Lerp(transform.position, player.transform.position+m_relativeDist, Time.deltaTime*3);
         }
     }
 }
