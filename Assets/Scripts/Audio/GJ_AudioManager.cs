@@ -47,7 +47,7 @@ namespace GameJam.AudioManagement
         #endregion
 
         #region Monobehaviour, Initialization & Listeners
-        new void Awake()
+        override void Awake()
         {
             base.Awake();
 
