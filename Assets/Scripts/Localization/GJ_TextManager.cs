@@ -45,6 +45,7 @@ namespace GameJam.Localization
         /// </summary>
         public List<SystemLanguage> ActiveLanguages { get { return m_activelanguages; } }
         public SystemLanguage CurrentLanguage { get { return m_currentLanguage; } }
+        public int CurrentLanguageIndex { get { return m_currentLanguageIndex; } }
 
         #endregion
 
@@ -100,11 +101,11 @@ namespace GameJam.Localization
                 ParseTexts(a);
             }
 
-            int lastLanguage = PlayerPrefs.GetInt(GJ_GameSetup.PlayerPrefs.LAST_LANGUAGE, -1);
+            int m_currentLanguageIndex = PlayerPrefs.GetInt(GJ_GameSetup.PlayerPrefs.LAST_LANGUAGE, -1);
 
-            if (lastLanguage != -1)
+            if (m_currentLanguageIndex != -1)
             {
-                m_currentLanguage = (SystemLanguage)lastLanguage;
+                m_currentLanguage = m_activelanguages[m_currentLanguageIndex];
             }
             else
             {
@@ -114,11 +115,10 @@ namespace GameJam.Localization
                 {
                     m_currentLanguage = SystemLanguage.English;
                 }
-            }
 
-            m_currentLanguageIndex = m_activelanguages.IndexOf(m_currentLanguage);
-
-            PlayerPrefs.SetInt(GJ_GameSetup.PlayerPrefs.LAST_LANGUAGE, (int)m_currentLanguage);
+                m_currentLanguageIndex = m_activelanguages.IndexOf(m_currentLanguage);
+                PlayerPrefs.SetInt(GJ_GameSetup.PlayerPrefs.LAST_LANGUAGE, (int)m_currentLanguage);
+            }        
         }
         #endregion
 
@@ -130,9 +130,21 @@ namespace GameJam.Localization
         public void ChangeLanguage(SystemLanguage language)
         {
             m_currentLanguage = language;
+            m_currentLanguageIndex = m_activelanguages.IndexOf(m_currentLanguage);
+            PlayerPrefs.SetInt(GJ_GameSetup.PlayerPrefs.LAST_LANGUAGE, m_currentLanguageIndex);
             GJ_EventManager.TriggerEvent(GJ_EventSetup.Localization.TRANSLATE_TEXTS);
         }
-
+        /// <summary>
+        /// Get the language from index (a dropdown example) and translate every text
+        /// </summary>
+        /// <param name="language"></param>
+        public void ChangeLanguageFromIndex(int language)
+        {
+            m_currentLanguage = ActiveLanguages[language];
+            m_currentLanguageIndex = language;
+            PlayerPrefs.SetInt(GJ_GameSetup.PlayerPrefs.LAST_LANGUAGE, m_currentLanguageIndex);
+            GJ_EventManager.TriggerEvent(GJ_EventSetup.Localization.TRANSLATE_TEXTS);
+        }
         /// <summary>
         /// Method that uses System.XML to parse from XMLs localization files
         /// </summary>

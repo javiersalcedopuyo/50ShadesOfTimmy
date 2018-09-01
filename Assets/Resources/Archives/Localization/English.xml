@@ -4,5 +4,82 @@
   <Table1>
     <Key>loadingText</Key>
     <Text>Loading</Text>
-  </Table1> 
+  </Table1>
+  <Table1>
+    <Key>continueText</Key>
+    <Text>Continue</Text>
+  </Table1>
+  <Table1>
+    <Key>newGameText</Key>
+    <Text>New Game</Text>
+  </Table1>
+  <Table1>
+    <Key>optionsText</Key>
+    <Text>Settings</Text>
+  </Table1>
+  <Table1>
+    <Key>creditsText</Key>
+    <Text>Credits</Text>
+  </Table1>
+  <Table1>
+    <Key>exitText</Key>
+    <Text>Exit Game</Text>
+  </Table1>
+  <Table1>
+    <Key>optionsTitleText</Key>
+    <Text>SETTINGS</Text>
+  </Table1>
+  <Table1>
+    <Key>optionsVolumeText</Key>
+    <Text>Volume</Text>
+  </Table1>
+  <Table1>
+    <Key>optionsGraphicsText</Key>
+    <Text>Graphics</Text>
+  </Table1>
+  <Table1>
+    <Key>languageText</Key>
+    <Text>Language</Text>
+  </Table1>
+  <Table1>
+    <Key>backText</Key>
+    <Text>Back</Text>
+  </Table1>
+  <Table1>
+    <Key>creditsTitleText</Key>
+    <Text>CREDITS</Text>
+  </Table1>
+  <Table1>
+    <Key>creditsMainText</Key>
+    <Text>Made By:
+
+      Ricardo Barajas
+      Manuel Rodríguez
+      Javier Salcedo
+    </Text>
+  </Table1>
+  <Table1>
+    <Key>Ultra</Key>
+    <Text>Ultra</Text>
+  </Table1>
+  <Table1>
+    <Key>Very High</Key>
+    <Text>Very High</Text>
+  </Table1>
+  <Table1>
+    <Key>High</Key>
+    <Text>High</Text>
+  </Table1>
+  <Table1>
+    <Key>Medium</Key>
+    <Text>Medium</Text>
+  </Table1>
+  <Table1>
+    <Key>Low</Key>
+    <Text>Low</Text>
+  </Table1>
+  <Table1>
+    <Key>Very Low</Key>
+    <Text>Very Low</Text>
+  </Table1>
 </NewDataSet>

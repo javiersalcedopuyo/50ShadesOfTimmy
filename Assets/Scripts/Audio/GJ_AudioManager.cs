@@ -26,7 +26,7 @@ namespace GameJam.AudioManagement
         /// <summary>
         /// Properties
         /// </summary>
-        public float MainVolume { get { return m_mainVolume; } set { m_mainVolume = value; } }
+        public float MainVolume { get { return m_mainVolume; } set { m_mainVolume = value; PlayerPrefs.SetFloat(GJ_GameSetup.PlayerPrefs.MAIN_VOLUME, value); } }
         #endregion
 
         #region Monobehaviour, Initialization & Listeners
@@ -49,6 +49,8 @@ namespace GameJam.AudioManagement
         {
             if (m_sources.Length == 0)
                 m_sources = GetComponents<AudioSource>();
+
+            m_mainVolume = PlayerPrefs.GetFloat(GJ_GameSetup.PlayerPrefs.MAIN_VOLUME, 1f);
         }
 
         /// <summary>
