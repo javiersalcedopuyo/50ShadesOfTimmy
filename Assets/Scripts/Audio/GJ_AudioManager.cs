@@ -1,11 +1,3 @@
-﻿/* 
- This file is part of MIS-SIM
- 
-> Copyright (C) 2018 Manuel Rodríguez Matesanz
-> Contact mail: mrodriguez@gbt.tfo.upm.es
->
-*/
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
