@@ -46,16 +46,16 @@ namespace GameJam.AudioManagement
         /// </summary>
         public bool m_inLoop = false;
 
-    /// <summary>
-    /// Constructor with all needed stuff
-    /// </summary>
-    /// <param name="_key"></param>
-    /// <param name="_type"></param>
-    /// <param name="_clip"></param>
-    /// <param name="_source"></param>
-    /// <param name="_inLoop"></param>
-    /// <param name="_volume"></param>
-        public GJ_AudioItem(string _key = "audio", GJ_AudioSetup.AudioTypes _type = GJ_AudioSetup.AudioTypes.SFX, AudioClip _clip = null, 
+        /// <summary>
+        /// Constructor with all needed stuff
+        /// </summary>
+        /// <param name="_key"></param>
+        /// <param name="_type"></param>
+        /// <param name="_clip"></param>
+        /// <param name="_source"></param>
+        /// <param name="_inLoop"></param>
+        /// <param name="_volume"></param>
+        public GJ_AudioItem(string _key = "audio", GJ_AudioSetup.AudioTypes _type = GJ_AudioSetup.AudioTypes.SFX, AudioClip _clip = null,
             AudioSource _source = null, bool _inLoop = false, float _volume = 1f)
         {
             m_clip = _clip;
@@ -103,3 +103,4 @@ namespace GameJam.AudioManagement
                 GJ_AudioManager.Instance.PlayOneShotByClip(m_type, m_clip, m_clipVolume);
         }
     }
+}
