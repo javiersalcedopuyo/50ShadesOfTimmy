@@ -30,6 +30,16 @@ namespace GameJam.AudioManagement
         /// Main Volume. Modified in Options (Main Menu Scene)
         /// </summary>
         [SerializeField] private float m_mainVolume = 1f;
+
+        [Header("Audio Items"), Space(10)]
+        /// <summary>
+        /// If we want to set two audios with same key (e.g: Being lazy) a string is added to the key so we can add them to the dictionary. 
+        /// </summary>
+        [SerializeField] private bool m_forceSameKey = false;
+        /// <summary>
+        /// Audios of the scene
+        /// </summary>
+        private Dictionary<string, GJ_AudioItem> m_audios;
         /// <summary>
         /// Properties
         /// </summary>
@@ -37,6 +47,17 @@ namespace GameJam.AudioManagement
         #endregion
 
         #region Monobehaviour, Initialization & Listeners
+        new void Awake()
+        {
+            base.Awake();
+
+            m_audios = new Dictionary<string, GJ_AudioItem>();
+
+            if (m_sources.Length == 0)
+                m_sources = GetComponents<AudioSource>();
+
+            m_mainVolume = PlayerPrefs.GetFloat(GJ_GameSetup.PlayerPrefs.MAIN_VOLUME, 1f);
+        }
         // Use this for initialization
         void Start()
         {
@@ -54,10 +75,7 @@ namespace GameJam.AudioManagement
         /// </summary>
         private void Init()
         {
-            if (m_sources.Length == 0)
-                m_sources = GetComponents<AudioSource>();
 
-            m_mainVolume = PlayerPrefs.GetFloat(GJ_GameSetup.PlayerPrefs.MAIN_VOLUME, 1f);
         }
 
         /// <summary>
@@ -79,6 +97,115 @@ namespace GameJam.AudioManagement
         #endregion
 
         #region Audio methods
+        /// <summary>
+        /// Creates a new AudioItem and returns it so can be used
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="clip"></param>
+        /// <param name="source"></param>
+        /// <param name="name"></param>
+        /// <param name="inLoop"></param>
+        /// <param name="volume"></param>
+        /// <returns></returns>
+        public GJ_AudioItem CreateItem(bool _addIt = true, string _key = "audio", GJ_AudioSetup.AudioTypes _type = GJ_AudioSetup.AudioTypes.SFX, AudioClip _clip = null, AudioSource _source = null, bool _inLoop = false, float _volume = 1f)
+        {
+            if (_source == null)
+                _source = m_sources[(int)_type];
+
+            GJ_AudioItem audio = new GJ_AudioItem(_key, _type, _clip, _source, _inLoop, _volume * m_mainVolume);
+
+            if (_addIt)
+                AddAudio(audio);
+
+            return audio;
+        }
+        /// <summary>
+        /// Creates a new audio items and play its clip
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="clip"></param>
+        /// <param name="source"></param>
+        /// <param name="name"></param>
+        /// <param name="inLoop"></param>
+        /// <param name="volume"></param>
+        public void CreateItemAndPlay(bool _addIt = true, string _key = "audio", GJ_AudioSetup.AudioTypes _type = GJ_AudioSetup.AudioTypes.SFX, AudioClip _clip = null, AudioSource _source = null, bool _inLoop = false, float _volume = 1f)
+        {
+            if (_source == null)
+                _source = m_sources[(int)_type];
+
+            GJ_AudioItem audio = CreateItem(_addIt, _key, _type, _clip, _source,_inLoop, _volume * m_mainVolume);
+            audio.Play();
+        }
+        /// <summary>
+        /// Add audio to dictionary and plays its audioclip
+        /// </summary>
+        /// <param name="item"></param>
+        public void AddAudioAndPlay(GJ_AudioItem item)
+        {
+            AddAudio(item);
+            item.Play();
+        }
+        /// <summary>
+        /// Add audio item to dictionary
+        /// </summary>
+        /// <param name="item"></param>
+        public void AddAudio(GJ_AudioItem item)
+        {
+            if (!m_audios.ContainsValue(item))
+            {
+                m_audios.Add(item.m_itemKeyInDictionary, item);
+
+            }
+            else if (m_forceSameKey)
+            {
+                item.m_itemKeyInDictionary += "(ForzedClone)";
+                AddAudio(item);
+            }
+
+        }
+        /// <summary>
+        /// Remove audio from dictionary
+        /// </summary>
+        /// <param name="item"></param>
+        public void RemoveAudio(GJ_AudioItem item)
+        {
+            if (m_audios.ContainsValue(item))
+            {
+                m_audios.Remove(item.m_itemKeyInDictionary);
+            }
+        }
+        /// <summary>
+        /// Play audio based on key
+        /// </summary>
+        /// <param name="key"></param>
+        public void PlayAudioWithKey(string key)
+        {
+            if (m_audios.ContainsKey(key))
+            {
+                GJ_AudioItem audio = m_audios[key];
+                audio.Play();
+            }
+            else
+            {
+                Debug.LogError("[Error] AudioManager doesn't contain " + key + " in the dictionary.");
+            }
+        }
+        /// <summary>
+        /// Play one shot based on key
+        /// </summary>
+        /// <param name="key"></param>
+        public void PlayOneShotAudioByKey(string key)
+        {
+            if (m_audios.ContainsKey(key))
+            {
+                GJ_AudioItem audio = m_audios[key];
+                audio.PlayOneShot();
+            }
+            else
+            {
+                Debug.LogError("[Error] AudioManager doesn't contain " + key + " in the dictionary.");
+            }
+        }
         /// <summary>
         /// Mute all channels
         /// </summary>
@@ -106,7 +233,7 @@ namespace GameJam.AudioManagement
         /// <param name="_type"></param>
         /// <param name="_clip"></param>
         /// <param name="_volume"></param>
-        public void PlayOneShotByClip(GJ_AudioSetup.pb_AudioTypes _type = GJ_AudioSetup.pb_AudioTypes.SFX, AudioClip _clip = null, float _volume = 1f)
+        public void PlayOneShotByClip(GJ_AudioSetup.AudioTypes _type = GJ_AudioSetup.AudioTypes.SFX, AudioClip _clip = null, float _volume = 1f)
         {
             if (_clip)
                 m_sources[(int)_type].PlayOneShot(_clip, _volume * m_mainVolume);
@@ -117,7 +244,7 @@ namespace GameJam.AudioManagement
         /// <param name="type"></param>
         /// <param name="clipName"></param>
         /// <param name="volume"></param>
-        public void PlayOneShotByName(GJ_AudioSetup.pb_AudioTypes _type = GJ_AudioSetup.pb_AudioTypes.SFX, string _clipPath = "", float _volume = 1f)
+        public void PlayOneShotByName(GJ_AudioSetup.AudioTypes _type = GJ_AudioSetup.AudioTypes.SFX, string _clipPath = "", float _volume = 1f)
         {
             if (!string.IsNullOrEmpty(_clipPath))
             {
@@ -134,7 +261,7 @@ namespace GameJam.AudioManagement
         /// <param name="clip"></param>
         /// <param name="volume"></param>
         /// <param name="inLoop"></param>
-        public void PlayAudioByClip(GJ_AudioSetup.pb_AudioTypes _type = GJ_AudioSetup.pb_AudioTypes.SFX, AudioClip _clip = null, float _volume = 1f, bool _inLoop = false)
+        public void PlayAudioByClip(GJ_AudioSetup.AudioTypes _type = GJ_AudioSetup.AudioTypes.SFX, AudioClip _clip = null, float _volume = 1f, bool _inLoop = false)
         {
             if (_clip)
             {
@@ -152,7 +279,7 @@ namespace GameJam.AudioManagement
         /// <param name="_clipPath"></param>
         /// <param name="_volume"></param>
         /// <param name="_inLoop"></param>
-        public void PlayAudioByName(GJ_AudioSetup.pb_AudioTypes _type = GJ_AudioSetup.pb_AudioTypes.SFX, string _clipPath = "", float _volume = 1f, bool _inLoop = false)
+        public void PlayAudioByName(GJ_AudioSetup.AudioTypes _type = GJ_AudioSetup.AudioTypes.SFX, string _clipPath = "", float _volume = 1f, bool _inLoop = false)
         {
             if (!string.IsNullOrEmpty(_clipPath))
             {
