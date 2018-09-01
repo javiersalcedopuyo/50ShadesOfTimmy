@@ -48,6 +48,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1166583344026852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c68652e13e0a43408212d2ea719d789, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ddd93913abc18b408e9416d868828f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_gameData:
+    m_playerData:
+      m_name: Ethan
+      m_level: 1
+      m_lives: 3
+      m_defense: 100
+      m_reflexes: 100
+      m_gold: 0
+      m_experience: 0

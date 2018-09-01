@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿/*==========================================================*\
+ *                                                          *
+ *       Script made by Manuel Rodríguez Matesanz           *
+ *       for Game Makers Game Jam in 31 / 08 / 2018         *    
+ *                                                          *
+ *==========================================================*/
+
+using UnityEngine;
 
 namespace GameJam
 {

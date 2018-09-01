@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*==========================================================*\
+ *                                                          *
+ *       Script made by Manuel Rodríguez Matesanz           *
+ *       for Game Makers Game Jam in 31 / 08 / 2018         *    
+ *                                                          *
+ *==========================================================*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -57,7 +64,7 @@ namespace GameJam.SceneManagement
         /// <param name="_scene"></param>
         /// <param name="_delayAfterLoading"></param>
         /// <param name="_eventName"></param>
-        public void LoadScene(GJ_SceneSetup.SCENES _scene, float _delayAfterLoading = 1f, string _eventName = "")
+        public static void LoadScene(GJ_SceneSetup.SCENES _scene, float _delayAfterLoading = 1f, string _eventName = "")
         {
             Instance.LoadSceneAsync(_scene, _delayAfterLoading, _eventName);
         }
@@ -67,7 +74,7 @@ namespace GameJam.SceneManagement
         /// <param name="_scene"></param>
         /// <param name="_delayAfterLoading"></param>
         /// <param name="_eventName"></param>
-        public void LoadSceneAsync(GJ_SceneSetup.SCENES _scene, float _delayAfterLoading = 1f, string _eventName = "")
+        private void LoadSceneAsync(GJ_SceneSetup.SCENES _scene, float _delayAfterLoading = 1f, string _eventName = "")
         {         
             StartCoroutine(LoadingScreen((int)_scene, _delayAfterLoading, _eventName));
         }

@@ -1,8 +1,15 @@
-﻿
+﻿/*==========================================================*\
+ *                                                          *
+ *       Script made by Manuel Rodríguez Matesanz           *
+ *       for Game Makers Game Jam in 31 / 08 / 2018         *    
+ *                                                          *
+ *==========================================================*/
+
 using GameJam.AudioManagement;
 using GameJam.EventManagement;
 using GameJam.Localization;
 using GameJam.SaveData;
+using GameJam.SceneManagement;
 using GameJam.Setup;
 using System.Collections;
 using System.Collections.Generic;
@@ -145,23 +152,11 @@ namespace GameJam.Interface
         {
             TranslateTexts();
 
-            // Parse quality
-            string[] names = QualitySettings.names;
-            m_graphicsDropdown.ClearOptions();
-            List<Dropdown.OptionData> newList = new List<Dropdown.OptionData>();
-
-            foreach (string name in names)
-            {
-                string n = GJ_TextManager.GetText(name);
-                newList.Add(new Dropdown.OptionData(n));
-            }
-
-            m_graphicsDropdown.AddOptions(newList);
             m_graphicsDropdown.value = QualitySettings.GetQualityLevel();
 
             //Parse languages
             m_languagesDropdown.ClearOptions();
-            newList = new List<Dropdown.OptionData>();
+            List<Dropdown.OptionData> newList = new List<Dropdown.OptionData>();
             foreach (SystemLanguage language in GJ_TextManager.Instance.ActiveLanguages)
             {
                 newList.Add(new Dropdown.OptionData(language.ToString()));
@@ -197,6 +192,19 @@ namespace GameJam.Interface
             m_creditsTitleText.text = GJ_TextManager.GetText(GJ_TextSetup.Menu.OPTIONS_TITLE);
             m_creditsText.text = GJ_TextManager.GetText(GJ_TextSetup.Menu.CREDITS_TEXT);
             m_creditsBackButtonText.text = GJ_TextManager.GetText(GJ_TextSetup.Menu.BACK);
+
+            // Parse quality
+            string[] names = QualitySettings.names;
+            m_graphicsDropdown.ClearOptions();
+            List<Dropdown.OptionData> newList = new List<Dropdown.OptionData>();
+
+            foreach (string name in names)
+            {
+                string n = GJ_TextManager.GetText(name);
+                newList.Add(new Dropdown.OptionData(n));
+            }
+
+            m_graphicsDropdown.AddOptions(newList);
         }
         /// <summary>
         /// We check in savemanager if we have a previous game saved
@@ -231,7 +239,8 @@ namespace GameJam.Interface
         /// </summary>
         public void NewGame()
         {
-
+            GJ_EventManager.TriggerEvent(GJ_EventSetup.SaveData.NEW_GAME);
+            GJ_SceneLoader.LoadScene(GJ_SceneSetup.SCENES.MANU_TEST, 1f, GJ_EventSetup.Menu.GO_TO_GAME);
         }
         /// <summary>
         /// Continue a saved game

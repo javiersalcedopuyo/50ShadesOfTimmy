@@ -19,7 +19,12 @@ namespace GameJam.Setup
         public static class DefaultValues
         {
             public const string CHARACTER_NAME = "Ethan";
+            public const int CHARACTER_LEVEL = 1;
             public const int CHARACTER_LIVES = 3;
+            public const float CHARACTER_EXPERIENCE = 0;
+            public const int CHARACTER_GOLD = 0;
+            public const int CHARACTER_REFLEXES = 100;
+            public const int CHARACTER_DEFENSES = 100;
         }
 
         public static class Tags

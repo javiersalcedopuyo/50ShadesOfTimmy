@@ -1,9 +1,18 @@
+/*==========================================================*\
+ *                                                          *
+ *       Script made by Javier Salcedo                      *
+ *       for Game Makers Game Jam in 31 / 08 / 2018         *    
+ *                                                          *
+ *==========================================================*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameJam.Camera{
-	public class GJ_CameraController : GJ_SingletonMonobehaviour<GJ_CameraController> {
+namespace GameJam.Camera
+{
+	public class GJ_CameraController : GJ_SingletonMonobehaviour<GJ_CameraController>
+    {
 
         private Quaternion m_originalRot;
         private Vector3 m_relativeDist;

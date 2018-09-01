@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*==========================================================*\
+ *                                                          *
+ *       Script made by Manuel Rodríguez Matesanz           *
+ *       for Game Makers Game Jam in 31 / 08 / 2018         *    
+ *                                                          *
+ *==========================================================*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GameJam.SceneManagement;
@@ -15,7 +22,8 @@ namespace GameJam
         // Use this for initialization
         void Start()
         {
-            GJ_SceneLoader.Instance.LoadSceneAsync(GJ_SceneSetup.SCENES.MAIN_MENU);
+            // load menu
+            GJ_SceneLoader.LoadScene(GJ_SceneSetup.SCENES.MAIN_MENU, 1f, GJ_EventSetup.Menu.GO_TO_MAIN_MENU);
         }
 
     }

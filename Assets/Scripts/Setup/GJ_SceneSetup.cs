@@ -11,17 +11,19 @@ namespace GameJam.Setup
     /// </summary>
     public static class GJ_SceneSetup
     {
+        // Hardcoded as we have a few demo scenes
         public enum SCENES
         {
             MANAGER_INITIALIZER = 0,
             MAIN_MENU,
-            GAME_0,
-            GAME_1,
-            GAME_2,
-            GAME_3,
+            PROLOGUE,
+            TOWN,
+            FOREST,
+            BOSS,
             END,
             JAVI_TEST,
-            MANU_TEST
+            MANU_TEST,
+            ZONE_LOADER
         }
        
     }

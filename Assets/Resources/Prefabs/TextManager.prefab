@@ -48,11 +48,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1810744484343098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 107dcd5ab506b6545bdf47ed88418073, type: 3}
+  m_Script: {fileID: 11500000, guid: 68f48009f907829478168345d8937f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_localizationFiles:
-  - {fileID: 4900000, guid: a85641fe2bfc980459f7a38600ea44ce, type: 3}
-  - {fileID: 4900000, guid: 7b26bd512ab870843ac311751a4d3a22, type: 3}
+  - {fileID: 4900000, guid: b705c83cde016c443b97b280b139037d, type: 3}
+  - {fileID: 4900000, guid: ad30bdddd8427e548a0364bd5a691afb, type: 3}
+  - {fileID: 4900000, guid: eff5a02608a81b542be3e4532b02168f, type: 3}
   m_currentLanguage: 34
   m_activelanguages: 
