@@ -8,61 +8,61 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d98e8f6ac3ae4d45b7562d102ea02f4, type: 3}
+  m_Script: {fileID: 11500000, guid: d2af387304e4b454b9ce8b815799cad0, type: 3}
   m_Name: FungusEditorResources
   m_EditorClassIdentifier: 
   updateOnReloadScripts: 0
   add:
-    free: {fileID: 2800000, guid: 33ce6dbb358bdab48a0170e40bdf098e, type: 3}
-    pro: {fileID: 2800000, guid: 88c05a3882e3120479f4579a8c3ce16d, type: 3}
+    free: {fileID: 2800000, guid: 24a867d6b4cdda04cb3aa3350f9ec7d0, type: 3}
+    pro: {fileID: 2800000, guid: 4e43c476b4a7a49a08c37378fb01ce99, type: 3}
   add_small:
-    free: {fileID: 2800000, guid: bca0f6d4b099e2f46aa55aa48546c677, type: 3}
-    pro: {fileID: 2800000, guid: 65662f31b2ca8c04eaff188a78415358, type: 3}
+    free: {fileID: 2800000, guid: 288aff1a0e5c14fd3a0039d24149df73, type: 3}
+    pro: {fileID: 2800000, guid: 64534dfaa17844231a9a9dd2df89d0db, type: 3}
   delete:
-    free: {fileID: 2800000, guid: dd5fb801006986c4ebe38e14115e0205, type: 3}
-    pro: {fileID: 2800000, guid: f5b5fe03477530e49a0133e039eede2c, type: 3}
+    free: {fileID: 2800000, guid: d6fc8a97e8a5b0947a49b780f787e504, type: 3}
+    pro: {fileID: 2800000, guid: 29c4d29b1678042a5b3516c732ccc507, type: 3}
   down:
-    free: {fileID: 2800000, guid: 223ecaa7dac8f0b47a3770debcbd85fb, type: 3}
-    pro: {fileID: 2800000, guid: ed8be47c937416443b8dd86377c5038a, type: 3}
+    free: {fileID: 2800000, guid: 51a973f446c2e664582861480cce6215, type: 3}
+    pro: {fileID: 2800000, guid: 5a87a7d3683164a238377d948572805f, type: 3}
   duplicate:
-    free: {fileID: 2800000, guid: 37daa5f783a1ce345ba29cdfc8e28ce3, type: 3}
-    pro: {fileID: 2800000, guid: a951c61c5d344e84790fdb10c928862f, type: 3}
+    free: {fileID: 2800000, guid: c97f334c466215a4f93eff31de3c1591, type: 3}
+    pro: {fileID: 2800000, guid: 2f17490d993c84bd7872ef6588ffba47, type: 3}
   fungus_mushroom:
-    free: {fileID: 2800000, guid: c1c8ceb4bb6e0e6428bf7a1db962f61d, type: 3}
-    pro: {fileID: 2800000, guid: b2fd1b0b55738e34a8511e83c6696e56, type: 3}
+    free: {fileID: 2800000, guid: 1c99c9bf7557e23469ed5dfce00504c0, type: 3}
+    pro: {fileID: 2800000, guid: 6368c1c16ebb1694091262337e4f8c44, type: 3}
   up:
-    free: {fileID: 2800000, guid: d9c78f08598813f41bdd79a3ebce4a63, type: 3}
-    pro: {fileID: 2800000, guid: 5efb78f4af68c8649a03ba86b82dce8c, type: 3}
+    free: {fileID: 2800000, guid: 8f1242ad894201f43b2b6d52fd990f77, type: 3}
+    pro: {fileID: 2800000, guid: 2a76a781db2994b33b83cd84b8835da7, type: 3}
   bullet_point:
-    free: {fileID: 2800000, guid: 3f1ba4387e9fb2442b1607714ff68723, type: 3}
+    free: {fileID: 2800000, guid: 4ef739c68bb234717a60a2bb83ff8602, type: 3}
     pro: {fileID: 0}
   choice_node_off:
-    free: {fileID: 2800000, guid: 177a669dc66485d408642a0ecc716953, type: 3}
+    free: {fileID: 2800000, guid: 7b6fc04aac74540e39e9502da5312ce7, type: 3}
     pro: {fileID: 0}
   choice_node_on:
-    free: {fileID: 2800000, guid: 2cc2132c1c292fd4f8bacc6407f949ce, type: 3}
+    free: {fileID: 2800000, guid: cfc05494b71a0446182868aab5f7febf, type: 3}
     pro: {fileID: 0}
   command_background:
-    free: {fileID: 2800000, guid: 294dbac7cd58ff14a8ff8c883d3c2fc0, type: 3}
+    free: {fileID: 2800000, guid: a5c9a4271b3de4e4f86eff7f8a1bd768, type: 3}
     pro: {fileID: 0}
   connection_point:
-    free: {fileID: 2800000, guid: 66511f5d11aa6da4fa5142d66e0582a1, type: 3}
+    free: {fileID: 2800000, guid: f08a4c27d7efe4aa6a35348a4e8aec8f, type: 3}
     pro: {fileID: 0}
   event_node_off:
-    free: {fileID: 2800000, guid: 16eba7ab71bfc6e4db89eea970fa73ea, type: 3}
+    free: {fileID: 2800000, guid: 0e16a209826864df7b05f6d3901aae7a, type: 3}
     pro: {fileID: 0}
   event_node_on:
-    free: {fileID: 2800000, guid: b601b3a42beb35a43b9334df6cba8941, type: 3}
+    free: {fileID: 2800000, guid: 9434488a4efb54da5986eba5d5619baf, type: 3}
     pro: {fileID: 0}
   play_big:
-    free: {fileID: 2800000, guid: 08917c8b58761a44d8bc96f3b08ce76a, type: 3}
+    free: {fileID: 2800000, guid: bff2ba39f5f4448589e80522ebfcd0a0, type: 3}
     pro: {fileID: 0}
   play_small:
-    free: {fileID: 2800000, guid: 079127293f873094a84e097aa3730a56, type: 3}
+    free: {fileID: 2800000, guid: a48a2b9b06deb469d9da1777b094521b, type: 3}
     pro: {fileID: 0}
   process_node_off:
-    free: {fileID: 2800000, guid: b70203c86bcadea48b18d38448cda560, type: 3}
+    free: {fileID: 2800000, guid: ea3a4228e6c214149bfe5c741b56ae0c, type: 3}
     pro: {fileID: 0}
   process_node_on:
-    free: {fileID: 2800000, guid: b29a56ed4638e794d91866333fd5c214, type: 3}
+    free: {fileID: 2800000, guid: c2dceb780784240ccbe8d3cde89f7671, type: 3}
     pro: {fileID: 0}

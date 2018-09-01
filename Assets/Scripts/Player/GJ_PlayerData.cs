@@ -29,7 +29,11 @@ namespace GameJam.SaveData
         /// <summary>
         /// Player life value
         /// </summary>
-        public int m_lives;
+        public int m_life;
+        /// <summary>
+        /// Player life value
+        /// </summary>
+        public int m_maxLife;
         /// <summary>
         /// Player defense value
         /// </summary>
@@ -46,6 +50,15 @@ namespace GameJam.SaveData
         /// Player Gained experience
         /// </summary>
         public float m_experience;
+        /// <summary>
+        /// Player experience for getting to next level
+        /// </summary>
+        public float m_nextLevelExperience;
+
+        public int m_baseStatsLife;
+        public int m_baseStatsDefenses;
+        public int m_baseStatsReflexes;
+
 
         /// <summary>
         /// Default constructor
@@ -54,7 +67,7 @@ namespace GameJam.SaveData
         {
             m_name = GJ_GameSetup.DefaultValues.CHARACTER_NAME;
             m_level = GJ_GameSetup.DefaultValues.CHARACTER_LEVEL;
-            m_lives = GJ_GameSetup.DefaultValues.CHARACTER_LIVES;
+            m_life = GJ_GameSetup.DefaultValues.CHARACTER_LIVES;
             m_defense = GJ_GameSetup.DefaultValues.CHARACTER_DEFENSES;
             m_reflexes = GJ_GameSetup.DefaultValues.CHARACTER_REFLEXES;
             m_gold = GJ_GameSetup.DefaultValues.CHARACTER_GOLD;
@@ -76,7 +89,7 @@ namespace GameJam.SaveData
         {
             m_name = _name;
             m_level = _level;
-            m_lives = _lives;
+            m_life = _lives;
             m_defense = _defense;
             m_reflexes = _reflexes;
             m_gold = _gold;
