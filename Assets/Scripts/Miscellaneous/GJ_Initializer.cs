@@ -23,7 +23,8 @@ namespace GameJam
         void Start()
         {
             // load menu
-            GJ_SceneLoader.LoadScene(GJ_SceneSetup.SCENES.MAIN_MENU, 1f, GJ_EventSetup.Menu.GO_TO_MAIN_MENU);
+            //GJ_SceneLoader.LoadScene(GJ_SceneSetup.SCENES.MAIN_MENU, 1f, GJ_EventSetup.Menu.GO_TO_MAIN_MENU);
+            GJ_SceneLoader.LoadScene(GJ_SceneSetup.SCENES.MAIN_MENU);
         }
 
     }

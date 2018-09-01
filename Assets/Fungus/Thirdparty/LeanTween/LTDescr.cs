@@ -84,7 +84,8 @@ public class LTDescr
 	public RectTransform rectTransform;
 	public UnityEngine.UI.Text uiText;
 	public UnityEngine.UI.Image uiImage;
-	public UnityEngine.UI.RawImage rawImage;
+    public UnityEngine.CanvasGroup uCanvasGroup;
+    public UnityEngine.UI.RawImage rawImage;
 	public UnityEngine.Sprite[] sprites;
 	#endif
 

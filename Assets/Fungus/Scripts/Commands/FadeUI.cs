@@ -33,6 +33,29 @@ namespace Fungus
 
         protected override void ApplyTween(GameObject go)
         {
+            var canvasGroup = go.GetComponentsInChildren<CanvasGroup>();
+            for (int i = 0; i < canvasGroup.Length; i++)
+            {
+                var g = canvasGroup[i];
+                if (Mathf.Approximately(duration, 0f))
+                {
+                    switch (fadeMode)
+                    {
+                        case FadeMode.Alpha:
+                            float tempAlpha = targetAlpha;
+                            g.alpha = tempAlpha;
+                            break;
+                        case FadeMode.Color:
+                            g.alpha = targetAlpha;
+                            break;
+                    }
+                }
+                else
+                {
+                    LeanTween.alphaCanvas(g, targetAlpha, duration).setEase(tweenType);
+                }
+            }
+
             var images = go.GetComponentsInChildren<Image>();
             for (int i = 0; i < images.Length; i++)
             {
