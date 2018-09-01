@@ -7,60 +7,52 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace GameJam.Player{
-	public class GJ_PlayerController : GJ_SingletonMonobehaviour<GJ_PlayerController> {
+namespace GameJam.Character.Player{
+	public class GJ_PlayerController : GJ_CharacterController {
 
-		private Vector3 m_horDir, m_verDir, m_movDir;
-		[SerializeField] private float m_speed = 10.0f;
-		[SerializeField] private float m_turningSpeed = 0.01f;
-		[SerializeField] private float m_jumpForce = 500.0f;
-		private Rigidbody m_rb;
-		private bool m_isOnFloor;
-
-		// Use this for initialization
-		void Start () {
-			m_rb = GetComponent<Rigidbody>(); 
-			m_isOnFloor = false;
+		private enum USER_INPUTS {
+			MOVEMENT = 0,
+			JUMP,
+			INTERACTION
 		}
-		
+		private int m_lastInput;
+
 		// Update is called once per frame
-		void Update () {
+		protected override void Update () {
+
+			base.Update();
+			
+			if (Input.GetAxis("Vertical") != 0.0f) {
+				m_verDir = new Vector3(0,0,Input.GetAxis("Vertical"));
+				m_horDir = new Vector3(0.0f, 0.0f, 0.0f);
+			} else if (Input.GetAxis("Horizontal") != 0.0f) {
+				m_horDir = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+				m_verDir = new Vector3(0.0f, 0.0f, 0.0f);
+			} else {
+				m_horDir = new Vector3(0.0f, 0.0f, 0.0f);
+				m_verDir = new Vector3(0.0f, 0.0f, 0.0f);
+			}
 
 			// Isometric 45º movement
-			m_horDir = new Vector3(Input.GetAxis("Horizontal")*0.5f, 0, -Input.GetAxis("Horizontal")*0.5f);
-			m_verDir = new Vector3(Input.GetAxis("Vertical"), 0, Input.GetAxis("Vertical"));
 			m_movDir = m_horDir + m_verDir;
-			transform.position += m_movDir * m_speed * Time.deltaTime;
-			//m_rb.AddForce(m_movDir*m_speed*Time.deltaTime, ForceMode.Impulse);			
+			Movement(m_movDir);
 
-			Quaternion m_maxRot;
-			if (m_horDir.x != 0.0f) {
-				m_maxRot = Quaternion.Euler(0.0f, Mathf.Sign(m_horDir.x) * 90.0f, 0.0f);
-				transform.rotation = Quaternion.Lerp(transform.rotation, m_maxRot, Time.time * m_turningSpeed);
+			// Jump
+			if (Input.GetKeyDown("space") && !m_isJumping) {
+				Jump();
 			}
-			if (m_verDir.x != 0.0f) {
-
-				float m_yRot = ( Mathf.Sign(m_verDir.x) < 0.0f ) ? 180.0f : 0.0f;
-				m_maxRot = Quaternion.Euler(0.0f, m_yRot, 0.0f);
-				transform.rotation = Quaternion.Lerp(transform.rotation, m_maxRot, Time.time * m_turningSpeed);
-			}
-
-			if (Input.GetKeyDown("space") && m_isOnFloor) {
-				m_rb.AddForce(transform.up * m_jumpForce, ForceMode.Impulse);
-				m_isOnFloor = false;
-			}
-
-			if (Input.GetKeyDown("q")) {
-				Debug.LogWarning("Speak, mere mortal!");
+			// Interact
+			if (Input.GetKeyDown("c")) {
+				Debug.LogWarning("Interaction!");
 			}
 		}
 
-		void OnCollisionEnter (Collision hit) {
+		protected override void OnTriggerEnter(Collider c) {
 
-			if(hit.collider.tag == "Surface") {
-				m_isOnFloor = true;
+			if (c.tag == "NPC") {
+
+				Debug.LogWarning("You may speak now, mortal.");
 			}
 		}
 	}
-
 }
