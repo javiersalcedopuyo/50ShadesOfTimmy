@@ -34,7 +34,7 @@ namespace GameJam.SaveData
         /// </summary>
         [SerializeField] private GJ_SaveData m_gameData;
 
-        override void Awake()
+        protected override void Awake()
         {
             base.Awake();
             InitializeData();
@@ -79,7 +79,7 @@ namespace GameJam.SaveData
         {
             if (m_prevData)
             {
-
+                
             }
             else
             {

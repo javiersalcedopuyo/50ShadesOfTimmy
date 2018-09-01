@@ -18,23 +18,16 @@ namespace GameJam.SaveData
     public class GJ_SaveData
     {
         /// <summary>
-        /// Attempts to beat the game
+        /// We save player data in game data
         /// </summary>
-        public int attempts;
+        public GJ_PlayerData m_playerData;
+
         /// <summary>
         /// Main Constructor with no parameters
         /// </summary>
         public GJ_SaveData()
         {
-
-        }
-        /// <summary>
-        /// Contructor with parameters
-        /// </summary>
-        /// <param name="_attepts"></param>
-        public GJ_SaveData(int _attepts)
-        {
-            attempts = _attepts;
+            m_playerData = new GJ_PlayerData();
         }
     }
 
