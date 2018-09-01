@@ -14,7 +14,7 @@ namespace GameJam.AudioManagement
     /// <summary>
     /// Audio Class - Adds an audioItem to Audio manager automatically
     /// </summary>
-    public class pb_Audio : MonoBehaviour
+    public class GJ_Audio : MonoBehaviour
     {
         /// <summary>
         /// Serialized audio item. Define in this object everything about the audio that will be played

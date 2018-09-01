@@ -30,6 +30,12 @@ namespace GameJam.Setup
         public static class SaveData
         {
             public const string SAVE_GAME = "saveGameEvent";
+            public const string NEW_GAME = "newGameEvent";
+        }
+
+        public static class Game
+        {
+            public const string START_GAME = "initGameEvent";
         }
     }
 

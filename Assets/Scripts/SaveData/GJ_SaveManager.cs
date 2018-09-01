@@ -52,6 +52,7 @@ namespace GameJam.SaveData
         public void StartAllListeners()
         {
             GJ_EventManager.StartListening(GJ_EventSetup.SaveData.SAVE_GAME, Save);
+            GJ_EventManager.StartListening(GJ_EventSetup.SaveData.NEW_GAME, CreateGameData);
         }
         /// <summary>
         /// Stop listening events so we avoid event leaking
@@ -59,6 +60,7 @@ namespace GameJam.SaveData
         public void StopAllListeners()
         {
             GJ_EventManager.StopListening(GJ_EventSetup.SaveData.SAVE_GAME, Save);
+            GJ_EventManager.StopListening(GJ_EventSetup.SaveData.NEW_GAME, CreateGameData);
         }
 
         /// <summary>
@@ -86,6 +88,12 @@ namespace GameJam.SaveData
                 SaveGame();
             }
         }
+
+        public void CreateGameData()
+        {
+            m_gameData = new GJ_SaveData();
+        }
+
         /// <summary>
         /// Save the game. An NPC can just trigger the event and this will save the game data
         /// We saved to JSON File or Encrypted File

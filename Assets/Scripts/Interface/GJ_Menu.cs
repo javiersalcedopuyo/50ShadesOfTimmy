@@ -237,6 +237,7 @@ namespace GameJam.Interface
         /// </summary>
         public void NewGame()
         {
+            GJ_EventManager.TriggerEvent(GJ_EventSetup.SaveData.NEW_GAME);
 
         }
         /// <summary>
