@@ -1,2 +1,2 @@
 # GameMakersToolkitJam
-GameMaker Toolkit Jam
+Game Maker's Game Jam Game in Unity
