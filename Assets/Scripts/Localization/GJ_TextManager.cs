@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*==========================================================*\
+ *                                                          *
+ *       Script made by Manuel Rodríguez Matesanz           *
+ *       for Game Makers Game Jam in 31 / 08 / 2018         *    
+ *                                                          *
+ *==========================================================*/
+
+using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
