@@ -46,6 +46,7 @@ namespace GameJam.SaveData
         /// Player Gained experience
         /// </summary>
         public float m_experience;
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -58,6 +59,8 @@ namespace GameJam.SaveData
             m_reflexes = GJ_GameSetup.DefaultValues.CHARACTER_REFLEXES;
             m_gold = GJ_GameSetup.DefaultValues.CHARACTER_GOLD;
             m_experience = GJ_GameSetup.DefaultValues.CHARACTER_EXPERIENCE;
+
+
         }
         /// <summary>
         /// Constructor with defined values
@@ -80,6 +83,4 @@ namespace GameJam.SaveData
             m_experience = _experience;
         }
     }
-
 }
-

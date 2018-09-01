@@ -1,3 +1,9 @@
+/*==========================================================*\
+ *                                                          *
+ *       Script made by Javier Salcedo                      *
+ *       for Game Makers Game Jam in 01 / 09 / 2018         *    
+ *                                                          *
+ *==========================================================*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
