@@ -1,0 +1,85 @@
+<?xml version='1.0'?>
+<NewDataSet>
+  <Language>Italian</Language>
+  <Table1>
+    <Key>loadingText</Key>
+    <Text>Caricamento in corso</Text>
+  </Table1>
+  <Table1>
+    <Key>continueText</Key>
+    <Text>Riprendi Gioco</Text>
+  </Table1>
+  <Table1>
+    <Key>newGameText</Key>
+    <Text>Nuova Partita</Text>
+  </Table1>
+  <Table1>
+    <Key>optionsText</Key>
+    <Text>Impostazioni</Text>
+  </Table1>
+  <Table1>
+    <Key>creditsText</Key>
+    <Text>Crediti</Text>
+  </Table1>
+  <Table1>
+    <Key>exitText</Key>
+    <Text>Esci</Text>
+  </Table1>
+  <Table1>
+    <Key>optionsTitleText</Key>
+    <Text>IMPOSTAZIONI</Text>
+  </Table1>
+  <Table1>
+    <Key>optionsVolumeText</Key>
+    <Text>Volume</Text>
+  </Table1>
+  <Table1>
+    <Key>optionsGraphicsText</Key>
+    <Text>Grafica</Text>
+  </Table1>
+  <Table1>
+    <Key>languageText</Key>
+    <Text>Lingua</Text>
+  </Table1>
+  <Table1>
+    <Key>backText</Key>
+    <Text>Indietro</Text>
+  </Table1>
+  <Table1>
+    <Key>creditsTitleText</Key>
+    <Text>CREDITI</Text>
+  </Table1>
+  <Table1>
+    <Key>creditsMainText</Key>
+    <Text>Fatto Da:
+
+      Ricardo Barajas
+      Manuel Rodríguez
+      Javier Salcedo
+    </Text>
+  </Table1>
+  <Table1>
+    <Key>Ultra</Key>
+    <Text>Ultra</Text>
+  </Table1>
+  <Table1>
+    <Key>Very High</Key>
+    <Text>Molto Alto</Text>
+  </Table1>  
+  <Table1>
+    <Key>High</Key>
+    <Text>Alto</Text>
+  </Table1>  
+  <Table1>
+    <Key>Medium</Key>
+    <Text>Medio</Text>
+  </Table1>  
+  <Table1>
+    <Key>Low</Key>
+    <Text>Basso</Text>
+  </Table1>  
+  <Table1>
+    <Key>Very Low</Key>
+    <Text>Molto Basso</Text>
+  </Table1>
+</NewDataSet>
