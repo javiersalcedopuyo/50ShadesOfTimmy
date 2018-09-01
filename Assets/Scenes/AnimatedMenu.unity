@@ -6762,7 +6762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1036624556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13811,6 +13811,7 @@ GameObject:
   - component: {fileID: 1815667993}
   - component: {fileID: 1815667994}
   - component: {fileID: 1815667975}
+  - component: {fileID: 1815667987}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -13871,6 +13872,7 @@ MonoBehaviour:
   - {fileID: 1815667985}
   - {fileID: 1815667990}
   - {fileID: 1815667989}
+  - {fileID: 1815667987}
   - {fileID: 1815667975}
 --- !u!114 &1815667975
 MonoBehaviour:
@@ -13928,7 +13930,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1815667974}
   selectedCommands:
-  - {fileID: 1815667975}
+  - {fileID: 1815667987}
   variables: []
   description: Menu Scene
   stepPause: 0
@@ -14120,6 +14122,26 @@ MonoBehaviour:
   atTime: 0
   loop: 1
   fadeDuration: 1
+--- !u!114 &1815667987
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1815667972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 24
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 1036624554}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  targetGameObjectOLD: {fileID: 0}
 --- !u!114 &1815667989
 MonoBehaviour:
   m_ObjectHideFlags: 2

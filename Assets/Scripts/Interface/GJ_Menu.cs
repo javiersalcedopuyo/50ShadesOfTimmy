@@ -15,6 +15,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Fungus;
 
 namespace GameJam.Interface
 {
@@ -241,6 +242,7 @@ namespace GameJam.Interface
         {
             GJ_EventManager.TriggerEvent(GJ_EventSetup.SaveData.NEW_GAME);
             GJ_SceneLoader.LoadScene(GJ_SceneSetup.SCENES.MANU_TEST, 1f, GJ_EventSetup.Menu.GO_TO_GAME);
+            FungusManager.Instance.MusicManager.StopMusic();
         }
         /// <summary>
         /// Continue a saved game

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
 namespace GameJam.Debugging
 {
@@ -9,6 +10,7 @@ namespace GameJam.Debugging
     /// </summary>
     public class GJ_Debug : MonoBehaviour
     {
+        public Flowchart flowchart;
 
         // Use this for initialization
         void Start()
@@ -22,6 +24,7 @@ namespace GameJam.Debugging
             if (GJ_InputManager.PressedInteract())
             {
                 Debug.Log("Pressed Interact");
+                flowchart.SendFungusMessage("ShowDialog");
             }
         }
     }
