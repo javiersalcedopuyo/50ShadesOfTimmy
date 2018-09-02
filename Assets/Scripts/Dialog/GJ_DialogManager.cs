@@ -12,6 +12,7 @@ using GameJam.Setup;
 using Fungus;
 using GameJam.EventManagement;
 using GameJam.Localization;
+using GameJam.Game;
 
 namespace GameJam.Dialog
 {
@@ -86,6 +87,7 @@ namespace GameJam.Dialog
         /// <param name="_messageName"></param>
         private void _showDialog(string _messageName)
         {
+            GJ_GameManager.Instance.CantMove();
             m_flowchart.SendFungusMessage(_messageName);
         }
         /// <summary>

@@ -34,6 +34,9 @@ namespace GameJam.SaveData
         /// </summary>
         [SerializeField] private GJ_SaveData m_gameData;
 
+
+        public GJ_SaveData Data { get { return m_gameData; } }
+
         protected override void Awake()
         {
             base.Awake();
@@ -44,6 +47,11 @@ namespace GameJam.SaveData
         void Start()
         {
 
+        }
+
+        private void OnDestroy()
+        {
+            StopAllListeners();
         }
 
         /// <summary>

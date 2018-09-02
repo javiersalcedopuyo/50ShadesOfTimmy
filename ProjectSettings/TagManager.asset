@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Surface
   - NPC
+  - wall
+  - CameraLimit
+  - Button
+  - Signal
+  - Door
+  - Wall
+  - ShadowWall
   layers:
   - Default
   - TransparentFX
@@ -16,6 +23,10 @@ TagManager:
   - 
   - 
   - PostProcessing
+  - FogVolumeShadowCaster
+  - FogVolume
+  - FogVolumeSurrogate
+  - FogVolumeUniform
   - 
   - 
   - 
@@ -33,12 +44,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Interactable
+  - Wall
   m_SortingLayers:
   - name: Default
     uniqueID: 0

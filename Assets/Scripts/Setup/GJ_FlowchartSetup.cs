@@ -29,6 +29,13 @@ namespace GameJam.Setup
         public static class Messages
         {
             public const string SET_LANGUAGE = "SetLanguage";
+            public const string DEAD = "DeadGame";
+            public const string DOOR_CLOSED = "DoorClosed";
+            public const string SIGNAL = "signal";
+            public const string FIRST_CROSS = "firstCross";
+            public const string NO_PRESSED_BUTTONS = "NoPressedButton";
+            public const string MOVE_TUTORIAL = "MoveTutorial";
+            public const string INTERACT = "Interact";
         }
 
     }

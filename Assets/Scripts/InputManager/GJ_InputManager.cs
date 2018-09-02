@@ -69,6 +69,30 @@ namespace GameJam
             Cursor.lockState = CursorLockMode.Locked;
         }
         /// <summary>
+        /// Left joystick input
+        /// </summary>
+        /// <returns></returns>
+        private float _LeftJoystickHorizontal()
+        {
+            return Input.GetAxis("Horizontal");
+        }
+        /// <summary>
+        /// Left joystick input
+        /// </summary>
+        /// <returns></returns>
+        private float _LeftJoystickVertical()
+        {
+            return Input.GetAxis("Vertical");
+        }
+        public static float LeftJoystickHorizontal()
+        {
+            return Instance._LeftJoystickHorizontal();
+        }
+        public static float LeftJoystickVertical()
+        {
+            return Instance._LeftJoystickVertical();
+        }
+        /// <summary>
         /// If we pressed interact buttons we tell we did
         /// </summary>
         /// <returns></returns>

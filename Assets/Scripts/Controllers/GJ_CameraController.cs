@@ -11,28 +11,28 @@ using UnityEngine;
 
 namespace GameJam.Camera
 {
-	public class GJ_CameraController : GJ_SingletonMonobehaviour<GJ_CameraController>
+    public class GJ_CameraController : GJ_SingletonMonobehaviour<GJ_CameraController>
     {
-
-        private Quaternion m_originalRot;
-        private Vector3 m_relativeDist;
-        private GameObject player;
+        public GameObject m_player;
+        public Quaternion m_originalRot;
+        public Vector3 m_relativeDist = new Vector3(0.0f, 3.5f, -7.0f);
         public Material transitionMat;
 
-        void Start() {
 
-            player = GameObject.FindGameObjectsWithTag("Player")[0];
-            m_originalRot = transform.rotation;
-            //m_relativeDist = transform.position - player.transform.position;
-            m_relativeDist = new Vector3(0.0f, 3.5f, -7.0f);
+        void Start()
+        {
+            if (!m_player)
+                m_player = GameObject.FindGameObjectsWithTag("Player")[0];
         }
 
-        void Update() {
+        void Update()
+        {
 
-            transform.position = Vector3.Lerp(transform.position, player.transform.position+m_relativeDist, Time.deltaTime*3);
+            transform.position = Vector3.Lerp(transform.position, m_player.transform.position + m_relativeDist, Time.deltaTime * 3);
         }
 
-        private void OnRenderImage(RenderTexture src, RenderTexture dst){
+        private void OnRenderImage(RenderTexture src, RenderTexture dst)
+        {
             Graphics.Blit(src, dst, transitionMat);
         }
     }

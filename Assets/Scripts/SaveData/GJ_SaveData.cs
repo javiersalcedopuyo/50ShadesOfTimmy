@@ -21,13 +21,16 @@ namespace GameJam.SaveData
         /// We save player data in game data
         /// </summary>
         public GJ_PlayerData m_playerData;
-
+        public bool pressedFirstButton;
+        public int currentLevel = 1;
         /// <summary>
         /// Main Constructor with no parameters
         /// </summary>
         public GJ_SaveData()
         {
             m_playerData = new GJ_PlayerData();
+            pressedFirstButton = false;
+            currentLevel = 1;
         }
     }
 

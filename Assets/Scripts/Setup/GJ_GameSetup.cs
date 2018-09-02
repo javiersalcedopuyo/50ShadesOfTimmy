@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*==========================================================*\
+ *                                                          *
+ *       Script made by Manuel Rodríguez Matesanz           *
+ *       for Game Makers Game Jam in 02 / 09 / 2018         *    
+ *                                                          *
+ *==========================================================*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +17,14 @@ namespace GameJam.Setup
     /// </summary>
     public static class GJ_GameSetup
     {
+        public static class GameMessages
+        {
+            public const string OPEN_DOOR = "OpenDoor";
+            public const string CLOSE_DOOR = "CloseDoor";
+
+
+        }
+
         public static class PlayerPrefs
         {
             public const string LAST_LANGUAGE = "lastLanguagePP";
@@ -29,7 +44,13 @@ namespace GameJam.Setup
 
         public static class Tags
         {
-
+            public const string PLAYER = "Player";
+            public const string GROUND = "Ground";
+            public const string SHAWDOW_WALL = "ShadowWall";
+            public const string SWITCH = "Switch";          
+            public const string BUTTON = "Button";          
+            public const string SIGNAL = "Signal";          
+            public const string DOOR = "Door";          
         }
 
         public static class Core

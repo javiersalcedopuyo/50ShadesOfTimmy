@@ -7,12 +7,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using GameJam.Battle;
 
 namespace GameJam.Character{
     public class GJ_CharacterController : MonoBehaviour {
+
+        public enum attackNames {
+            STONE = 0,
+            SCISSORS,
+            PAPER
+        }
         
         protected Vector3 m_horDir, m_verDir, m_movDir;
-		[SerializeField] private float m_speed = 10.0f;
+		
+        float m_speed = 10.0f;
 		[SerializeField] private float m_turningSpeed = 0.01f;
 		[SerializeField] private float m_jumpForce = 500.0f;
 		protected Rigidbody m_rb;
@@ -23,13 +31,17 @@ namespace GameJam.Character{
 
         private Vector3 m_upDir;
         
+        public bool m_myTurn, m_inBattle;
+
+        public attackNames m_lastAttack;
+
         // Use this for initialization
         protected virtual void Start () {
 			m_rb = GetComponent<Rigidbody>(); 
 			m_isJumping = false;
             m_verDir = new Vector3(0.0f,0.0f,0.0f);
             m_horDir = new Vector3(0.0f,0.0f,0.0f);
-            anim = GetComponent<Animator>();
+            //anim = GetComponent<Animator>();
 		}
 
         protected virtual void Update() {
@@ -51,7 +63,7 @@ namespace GameJam.Character{
 
             //m_isMoving = (m_dir == new Vector3(0.0f, 0.0f, 0.0f) && !m_isJumping) ? false : true;
 
-			transform.position += m_dir * m_speed * Time.deltaTime;
+			transform.position += m_dir /* m_speed Time.deltaTime*/;
 			//m_rb.AddForce(m_movDir*m_speed*Time.deltaTime, ForceMode.Impulse);	
 			FaceDirection();
 		}
@@ -61,24 +73,26 @@ namespace GameJam.Character{
 		/// </summary>
 		private void FaceDirection() {
 
-            anim.SetFloat("movX", m_movDir.x);
-            anim.SetFloat("movZ", m_movDir.z);
+            //anim.SetFloat("movX", m_movDir.x);
+            //anim.SetFloat("movZ", m_movDir.z);
 
 			Quaternion m_desiredRot = Quaternion.Euler(0,0,0);
 			if (m_movDir.x != 0.0f) {
-				m_desiredRot = Quaternion.Euler(0.0f, Mathf.Sign(m_movDir.x) * 20.0f, 0.0f);
-                anim.SetBool("isWalking", true);
+				m_desiredRot = Quaternion.Euler(0.0f, Mathf.Sign(m_movDir.x) * 90.0f, 0.0f);
+                //anim.SetBool("isWalking", true);
 			}
 			if (m_movDir.z != 0.0f) {
 				//float m_yRot = ( Mathf.Sign(m_verDir.x) < 0.0f ) ? 180.0f : 0.0f;
-				m_desiredRot = Quaternion.Euler(Mathf.Sign(m_movDir.z) * 15.0f, 0.0f, 0.0f);
-                anim.SetBool("isWalking", true);
+				m_desiredRot = Quaternion.Euler(0, Mathf.Sign(m_movDir.z) * 180.0f, 0);
+                //anim.SetBool("isWalking", true);
             }
+            // Return to the base rotation
             if (m_movDir == new Vector3(0,0,0)) {
-				m_desiredRot = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-                anim.SetBool("isWalking", false);
-            } 
-			transform.rotation = Quaternion.Lerp(transform.rotation, m_desiredRot, Time.time*m_turningSpeed);
+				//m_desiredRot = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                //anim.SetBool("isWalking", false);
+            } else {
+			    transform.rotation = Quaternion.Lerp(transform.rotation, m_desiredRot, Time.time*m_turningSpeed);
+            }
 
 		}
 

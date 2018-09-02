@@ -37,6 +37,8 @@ namespace GameJam.Setup
         {
             public const string START_GAME = "initGameEvent";
             public const string CONTINUE_GAME = "continueGameEvent";
+            public const string DEAD = "deadGameEvent";
+            public const string CAN_MOVE = "canMoveEvent";
         }
 
         public static class Menu

@@ -12,27 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/AnimatedMenu.unity
     guid: 46d91bf555612ce45ab40335a4f53a81
   - enabled: 1
-    path: Assets/Scenes/Prologue.unity
-    guid: d5c00df546e03874888e6203e0e2fc60
-  - enabled: 1
-    path: Assets/Scenes/Town.unity
-    guid: e0ba17f41fdbffd4db324a9d4487c57c
-  - enabled: 1
-    path: Assets/Scenes/Forest.unity
-    guid: e210111cb3f09834fa879534dfd8857d
-  - enabled: 1
-    path: Assets/Scenes/Boss.unity
-    guid: 1fd3bb729b5dc914680caf3fa44d7d6e
-  - enabled: 1
-    path: Assets/Scenes/End.unity
-    guid: eb8626f1ae52b314c8c33dd3f9bd1a1d
-  - enabled: 1
-    path: Assets/Scenes/TestJavi.unity
-    guid: 465bfcc1c0407724c967bb5ff50456b9
-  - enabled: 1
     path: Assets/Scenes/TestManu.unity
     guid: a3e166451a54b9848b25da532e852ff7
-  - enabled: 1
-    path: Assets/Scenes/ZoneLoader.unity
-    guid: 77cc036932b8a0b429d770f115d6f5e9
   m_configObjects: {}
