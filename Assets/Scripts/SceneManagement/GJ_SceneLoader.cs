@@ -58,6 +58,16 @@ namespace GameJam.SceneManagement
             //
         }
 
+        private void _HidePanel()
+        {
+            m_loadingScreenGroup.SetActive(false);
+        }
+
+        public static void HidePanel()
+        {
+            Instance._HidePanel();
+        }
+
         /// <summary>
         /// Load Scene from anywhere (static method)
         /// </summary>

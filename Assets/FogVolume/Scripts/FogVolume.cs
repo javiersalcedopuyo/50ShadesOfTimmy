@@ -1174,7 +1174,7 @@ public class FogVolume : MonoBehaviour
             AssignCamera();
         //#endif
 
-        m_lightManager.DrawDebugData = ShowDebugGizmos;
+        m_lightManager.DrawDebugData = false;//ShowDebugGizmos;
         if (PointLightCullSizeMultiplier < 1.0f) { PointLightCullSizeMultiplier = 1.0f; }
         m_lightManager.SetPointLightCullSizeMultiplier(PointLightCullSizeMultiplier);
 

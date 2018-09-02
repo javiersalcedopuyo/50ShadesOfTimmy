@@ -32,6 +32,9 @@ namespace GameJam.Setup
             public const string CREDITS_TITLE = "creditsTitleText";
             public const string CREDITS_TEXT = "creditsMainText";
 
+            public const string RESUME = "resumeText";
+            public const string BACK_TO_MENU = "backToMenuText";
+
         }
     }
 }

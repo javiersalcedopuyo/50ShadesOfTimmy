@@ -14299,7 +14299,6 @@ GameObject:
   - component: {fileID: 1815667977}
   - component: {fileID: 1815667976}
   - component: {fileID: 1815667974}
-  - component: {fileID: 1815667973}
   - component: {fileID: 1815667979}
   - component: {fileID: 1815667978}
   - component: {fileID: 1815667981}
@@ -14316,6 +14315,7 @@ GameObject:
   - component: {fileID: 1815667994}
   - component: {fileID: 1815667975}
   - component: {fileID: 1815667987}
+  - component: {fileID: 1815667973}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -14325,18 +14325,16 @@ GameObject:
   m_IsActive: 1
 --- !u!114 &1815667973
 MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 11462346, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1815667972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ff5d850a887844fe87ae7d366d3ab5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 1815667974}
-  waitForFrames: 0
 --- !u!114 &1815667974
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -14835,7 +14833,7 @@ GameObject:
   - component: {fileID: 1882695671}
   - component: {fileID: 1882695670}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Main Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

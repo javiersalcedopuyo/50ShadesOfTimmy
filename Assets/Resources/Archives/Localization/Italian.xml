@@ -3,7 +3,7 @@
   <Language>Italian</Language>
   <Table1>
     <Key>loadingText</Key>
-    <Text>Caricamento in corso</Text>
+    <Text>Caricamento in corso...</Text>
   </Table1>
   <Table1>
     <Key>continueText</Key>
@@ -93,5 +93,13 @@
   <Table1>
     <Key>Italian</Key>
     <Text>Italiano</Text>
+  </Table1>
+  <Table1>
+    <Key>resumeText</Key>
+    <Text>Continuare</Text>
+  </Table1>
+  <Table1>
+    <Key>backToMenuText</Key>
+    <Text>Vai al menu</Text>
   </Table1>
 </NewDataSet>

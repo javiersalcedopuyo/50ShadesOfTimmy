@@ -22,6 +22,7 @@ namespace GameJam
     {
 
         [SerializeField] private KeyCode[] m_interactKey = { KeyCode.E, KeyCode.Joystick1Button0 };
+        [SerializeField] private KeyCode[] m_menuKey = { KeyCode.Escape, KeyCode.Joystick1Button7 };
 
         // Use this for initialization
         void Start()
@@ -117,5 +118,24 @@ namespace GameJam
         {
             return Instance._PressedInteractButton();
         }
+
+        private bool _PressedMenuButton()
+        {
+            foreach (KeyCode k in m_menuKey)
+            {
+                if (Input.GetKeyDown(k))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public static bool PressedEscape()
+        {
+            return Instance._PressedMenuButton();
+        }
+
     }
 }

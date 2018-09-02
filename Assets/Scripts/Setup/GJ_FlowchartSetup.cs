@@ -36,6 +36,7 @@ namespace GameJam.Setup
             public const string NO_PRESSED_BUTTONS = "NoPressedButton";
             public const string MOVE_TUTORIAL = "MoveTutorial";
             public const string INTERACT = "Interact";
+            public const string END_DEMO = "EndDemo";
         }
 
     }

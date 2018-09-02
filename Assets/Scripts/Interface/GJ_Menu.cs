@@ -117,6 +117,7 @@ namespace GameJam.Interface
         // Use this for initialization
         void Start()
         {
+            GameJam.SceneManagement.GJ_SceneLoader.HidePanel();
             StartAllListeners();
             InitializeData();
         }

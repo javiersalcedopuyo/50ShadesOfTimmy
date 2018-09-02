@@ -349,8 +349,12 @@ public class FogVolumeLightManager : MonoBehaviour
 
         Gizmos.color = Color.magenta;
         var currentMatrix = Gizmos.matrix;
+
         if (!m_camera)
             m_camera = Camera.main;
+
+        if (!m_camera)
+            return ;
 
         Gizmos.matrix = Matrix4x4.TRS(m_camera.transform.position,
                                       m_camera.transform.rotation,
