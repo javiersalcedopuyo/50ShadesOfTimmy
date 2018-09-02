@@ -22,15 +22,8 @@ namespace GameJam.Setup
         public enum SCENES
         {
             MANAGER_INITIALIZER = 0,
-            MAIN_MENU,
-            PROLOGUE,
-            TOWN,
-            FOREST,
-            BOSS,
-            END,
-            JAVI_TEST,
-            MANU_TEST,
-            ZONE_LOADER
+            MAIN_MENU = 1,
+            MANU_TEST = 2
         }
        
     }
