@@ -16,8 +16,8 @@ namespace GameJam.Game
         [SerializeField] private GJ_Audio m_audio;
         [SerializeField] private GameObject[] gos;
         [SerializeField] private string[] messages;
-        [SerializeField]
-        private bool m_alreadyInteracted = false;
+        [SerializeField] private bool m_alreadyInteracted = false;
+        [SerializeField] private bool m_interactOnce = true;
 
 
         // Use this for initialization
@@ -30,7 +30,7 @@ namespace GameJam.Game
         {
             m_audio.PlayThisItem();
 
-            if (!m_alreadyInteracted)
+            if ((!m_alreadyInteracted && m_interactOnce) || !m_interactOnce)
             {
                 int index = 0;
 

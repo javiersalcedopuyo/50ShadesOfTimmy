@@ -16,6 +16,8 @@ namespace GameJam.Game
     public class GJ_Door : GJ_Interactable
     {
         private bool m_closed = true;
+        public bool m_showDialogOnClose = true;
+        public bool m_canBeOpened = false;
         public Animator animator;
         public Collider collider;
         public GJ_Audio openAudio;
@@ -29,13 +31,11 @@ namespace GameJam.Game
 
         public override void Action()
         {
-            if (m_closed)
+            if (m_closed && m_showDialogOnClose)
             {
                 ShowDialog();
             }
         }
-
-        
 
         public override void ShowDialog()
         {
@@ -44,6 +44,11 @@ namespace GameJam.Game
 
         public void CloseDoor()
         {
+            if (m_closed)
+            {
+                return;
+            }
+                
             collider.enabled = true;
             animator.SetTrigger("CloseDoor");
             closeAudio.PlayThisItem();
@@ -51,6 +56,18 @@ namespace GameJam.Game
 
         public void OpenDoor()
         {
+            if (!m_closed)
+                return;
+
+            if (m_showDialogOnClose)
+            {
+                ShowDialog();
+
+                if (!m_canBeOpened)
+                    return;
+            }
+                
+
             collider.enabled = false;
             animator.SetTrigger("OpenDoor");
             openAudio.PlayThisItem();
