@@ -53,7 +53,7 @@ namespace GameJam.AudioManagement
 
             m_audios = new Dictionary<string, GJ_AudioItem>();
 
-            if (m_sources.Length == 0)
+            if (m_sources!= null && m_sources.Length == 0)
                 m_sources = GetComponents<AudioSource>();
 
             m_mainVolume = PlayerPrefs.GetFloat(GJ_GameSetup.PlayerPrefs.MAIN_VOLUME, 1f);

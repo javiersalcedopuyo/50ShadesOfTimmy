@@ -51,7 +51,7 @@ namespace GameJam.Game
             }
 
             if (m_playOnce)
-                Destroy(this.gameObject);
+                this.gameObject.SetActive(false);//Destroy(this.gameObject);
         }
     }
 

@@ -18,21 +18,31 @@ namespace GameJam.Game
         private bool m_closed = true;
         public bool m_showDialogOnClose = true;
         public bool m_canBeOpened = false;
-        public Animator animator;
-        public Collider collider;
-        public GJ_Audio openAudio;
-        public GJ_Audio closeAudio;
+        public bool m_openedByDefault = false;
+        public Animator m_animator;
+        public Collider m_collider;
+        public GJ_Audio m_openAudio;
+        public GJ_Audio m_closeAudio;
 
         // Use this for initialization
         void Start()
         {
             m_dialogMessage = GJ_FlowchartSetup.Messages.DOOR_CLOSED;
+
+            if (m_openedByDefault)
+            {
+                m_closed = false;
+                m_collider.enabled = false;
+                m_animator.SetTrigger("OpenDoor");
+            }
+
+            m_showDialog = m_showDialogOnClose;
         }
 
         public override void Action()
         {
             if (m_closed && m_showDialogOnClose)
-            {
+            {               
                 ShowDialog();
             }
         }
@@ -48,9 +58,9 @@ namespace GameJam.Game
                 return;
 
             m_closed = true;
-            collider.enabled = true;
-            animator.SetTrigger("CloseDoor");
-            closeAudio.PlayThisItem();
+            m_collider.enabled = true;
+            m_animator.SetTrigger("CloseDoor");
+            m_closeAudio.PlayThisItem();
         }
 
         public void OpenDoor()
@@ -67,9 +77,9 @@ namespace GameJam.Game
             }
 
             m_closed = false;
-            collider.enabled = false;
-            animator.SetTrigger("OpenDoor");
-            openAudio.PlayThisItem();
+            m_collider.enabled = false;
+            m_animator.SetTrigger("OpenDoor");
+            m_openAudio.PlayThisItem();
         }
     }
 
