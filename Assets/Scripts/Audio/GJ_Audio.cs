@@ -47,7 +47,7 @@ namespace GameJam.AudioManagement
         private void OnDestroy()
         {
             if (GJ_AudioManager.Instance)
-            GJ_AudioManager.Instance.RemoveAudio(m_item);
+                GJ_AudioManager.Instance.RemoveAudio(m_item);
         }
         /// <summary>
         /// Play this item with its properties

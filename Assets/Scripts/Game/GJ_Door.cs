@@ -45,10 +45,9 @@ namespace GameJam.Game
         public void CloseDoor()
         {
             if (m_closed)
-            {
                 return;
-            }
-                
+
+            m_closed = true;
             collider.enabled = true;
             animator.SetTrigger("CloseDoor");
             closeAudio.PlayThisItem();
@@ -66,8 +65,8 @@ namespace GameJam.Game
                 if (!m_canBeOpened)
                     return;
             }
-                
 
+            m_closed = false;
             collider.enabled = false;
             animator.SetTrigger("OpenDoor");
             openAudio.PlayThisItem();

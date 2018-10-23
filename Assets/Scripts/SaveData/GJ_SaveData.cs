@@ -17,10 +17,6 @@ namespace GameJam.SaveData
     [System.Serializable]
     public class GJ_SaveData
     {
-        /// <summary>
-        /// We save player data in game data
-        /// </summary>
-        public GJ_PlayerData m_playerData;
         public bool pressedFirstButton;
         public int currentLevel = 1;
         /// <summary>
@@ -28,7 +24,6 @@ namespace GameJam.SaveData
         /// </summary>
         public GJ_SaveData()
         {
-            m_playerData = new GJ_PlayerData();
             pressedFirstButton = false;
             currentLevel = 1;
         }

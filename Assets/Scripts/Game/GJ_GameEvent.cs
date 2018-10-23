@@ -14,26 +14,44 @@ namespace GameJam.Game
 {
     public class GJ_GameEvent : MonoBehaviour
     {
-        [SerializeField] private GameObject m_relatedGO;
-        [SerializeField] private string m_method;
+        [Header("Related GameObjects"), Space(10)]
+        [SerializeField] private GameObject[] m_relatedGOs;
+        [SerializeField] private string[] m_methods;
+        [Header("Tag that will activate the event"), Space(10)]
+        [SerializeField] private List<string> m_activatorTags;
+        [Header("Properties"), Space(10)]
         [SerializeField] private bool m_onInit = false;
+        [SerializeField] private bool m_playOnce = true;
+
         // Use this for initialization
         void Start()
         {
             if (m_onInit)
             {
-                m_relatedGO.SendMessage(m_method);
-                Destroy(this.gameObject);
+                EventAction();
             }
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.tag == GJ_GameSetup.Tags.PLAYER)
+            if (m_activatorTags.Contains(other.gameObject.tag))
             {
-                m_relatedGO.SendMessage(m_method);
-                Destroy(this.gameObject);
+                EventAction();
             }
+        }
+
+        private void EventAction()
+        {
+            int index = 0;
+
+            foreach (GameObject go in m_relatedGOs)
+            {
+                go.SendMessage(m_methods[index]);
+                index++;
+            }
+
+            if (m_playOnce)
+                Destroy(this.gameObject);
         }
     }
 
