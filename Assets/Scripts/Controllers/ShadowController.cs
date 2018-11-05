@@ -71,8 +71,13 @@ namespace GameJam{
 
             dir  = p.gameObject.transform.position - l.gameObject.transform.position;
             dist = dir.magnitude;
+            // If the distance between light and object is greater than the light's range, it can't be illuminated.
+            if (dist < l.GetRange()) return false;
+
             dir  = Vector3.Normalize(dir);
             Vector3 lightDir = l.GetLightDir();
+            // If the light has no direction, it's a spotlight and illuminates in all directions.
+            if (lightDir == Vector3.zero) return true;
 
             angle = Mathf.Abs( Vector3.Angle(dir, lightDir) );
             float lightAngle = Mathf.Abs( l.GetSpotAngle() );
