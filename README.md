@@ -1,2 +1,2 @@
-# GameMakersToolkitJam
-Game Maker's Game Jam Game in Unity
+# 50 Shades of Timmy
+A revolutionary and spooky indie game.
